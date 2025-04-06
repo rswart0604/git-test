@@ -28,6 +28,12 @@ def rk4(h, t0, y0, tf):
         t0 += h
     return y0
 
+def backward_euler(h, t0, y0, tf):
+    while t0 < tf:
+        y0 = y0 + h*f(y0, t0+h)
+        t0 += h
+    return y0
+
 # i want to do some more tests here; let's test rk2
 _rk2 = np.vectorize(rk2, excluded=['t0','y0','tf'])
 fig1, ax1 = plt.subplots()
@@ -48,3 +54,4 @@ print(f'Order of forward euler is {m}')
 fig1.savefig('plot.png')
 
 print(rk2_yy)
+
