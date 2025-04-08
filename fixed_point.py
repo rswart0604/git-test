@@ -10,4 +10,4 @@ def fixed_point(x0):
     while f(x0) > 1e-3:
         x0 = g(x0)
     return x0
-:wq
+
